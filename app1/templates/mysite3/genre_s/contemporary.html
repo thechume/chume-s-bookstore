@@ -33,21 +33,19 @@
 		
 		<div class="topnav">
 		  <a href="{% url 'new_releases' %}">New Releases</a>
-		  <a href="#">Today's Deals</a>
+		  <a href="{% url 'todays_deals' %}">Today's Deals</a>
 		  <a href="{% url 'genres' %}">Browse By Genre</a>
 		  <a href="{% url 'categories' %}">Browse By Category</a>
 		</div>
 
 		<div class="smolheading">
-			<h3>TODAY'S DEALS</h3>
+			<h3>Contemporary</h3>
 		</div>
 		<div class="row">
 		  <div class="column_img1">
 			<img src="{% static 'img/warcross.jpg'%}" alt="Warcross" width="200" height="330" align="middle"/>
 		  </div>
 		  <div class="column_text1">
-			<h3 style="color:#E70707">50% off!</h3>
-			<p><strong>312 only!</strong></p>
 			<p>Title: <strong>Warcross</strong><p>
 			
 			<p>Author: <strong>Marie Lu</strong><p>
@@ -64,8 +62,6 @@
 			<img src="{% static 'img/I was born for this.jpg'%}" alt="I Was Born For This" width="200" height="330" align="middle"/>
 		  </div>
 		  <div class="column_text1">
-			<h3 style="color:#E70707">50% off!</h3>
-			<p><strong>312 only!</strong></p>
 			<p>Title: <strong>I Was Born For This</strong><p>
 			
 			<p>Author: <strong>Alice Osman</strong><p>
@@ -77,42 +73,38 @@
 			<a href="#"><p>show more</p></a>
 		  </div>
 		 </div>
-		 <div class="row">
-		  <div class="column_img1">
-			<img src="{% static 'img/crazy rich asians.jpg'%}" alt="Crazy Rich Asians" width="200" height="330" align="middle"/>
-		  </div>
-		  <div class="column_text1">
-			<h3 style="color:#E70707">15% off!</h3>
-			<p><strong>289 only!</strong></p>
-			<p>Title: <strong>Crazy Rich Asians</strong><p>
+		 <div class="row">	  
+			<div class="column_img1">
+				<img src="{% static 'img/warcross.jpg'%}" alt="Warcross" width="200" height="330" align="middle"/>
+			</div>
+			<div class="column_text1">
+				<p>Title: <strong>Warcross</strong><p>
 			
-			<p>Author: <strong>Kevin Kwan</strong><p>
+				<p>Author: <strong><a href="{% url 'warcross' %}"><p>show more</p></a></strong><p>
 
-			<p>Genre: <strong>Fantasy</strong><p>
+				<p>Genre: <strong>Contemporary</strong><p>
 
-			<p>Category: <strong>New Adult</strong><p>
+				<p>Category: <strong>Young Adult</strong><p>
 
-			<a href="#"><p>show more</p></a>
-		  </div>
-		 </div>
+				<a href="{% url 'warcross' %}"><p>show more</p></a>
+			</div>
+		</div>
 		<div class="row">
 		  <div class="column_img1">
-			<img src="{% static 'img/koi good news.jpg'%}" alt="Koi Good News?" width="200" height="330" align="middle"/>
+		    <img src="{% static 'img/warcross.jpg'%}" alt="Warcross" width="200" height="330" align="middle"/>
 		  </div>
 		  <div class="column_text1">
-			<h3 style="color:#E70707">10% off!</h3>
-			<p><strong>230 only!</strong></p>
-			<p>Title: <strong>Koi Good News?</strong><p>
+			<p>Title: <strong>Warcross</strong><p>
 			
-			<p>Author: <strong>Zarreen Khan</strong><p>
+			<p>Author: <strong><a href="{% url 'warcross' %}"><p>show more</p></a></strong><p>
 
-			<p>Genre: <strong>Humour</strong><p>
+			<p>Genre: <strong>Contemporary</strong><p>
 
-			<p>Category: <strong>Adult</strong><p>
+			<p>Category: <strong>Young Adult</strong><p>
 
-			<a href="#"><p>show more</p></a>
+			<a href="{% url 'warcross' %}"><p>show more</p></a>
 		  </div>
-		 </div>
+		</div>
 	</div>
 </body>
 

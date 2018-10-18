@@ -13,7 +13,7 @@
 	{% endblock %}
 	<div class="sidenav">
 	  <a href="{% url 'new_releases' %}">Home</a>
-	  <a href="{% url 'discover' %}">Discover</a>
+	  <a href="#">Discover</a>
 	  <a href="{% url 'about' %}">About</a>
 	  <a href="{% url 'contact' %}">Contact</a>
 	</div>
@@ -21,7 +21,7 @@
 	<div class="main">
 
 		<div class="header">
-		  <img src="{% static 'img/logo2.png'%}"/>
+		  <img src="{% static 'img/logo2.png'%}">
 		</div>
 		
 		<div id="tfheader">
@@ -35,37 +35,36 @@
 		  <a href="{% url 'new_releases' %}">New Releases</a>
 		  <a href="{% url 'todays_deals' %}">Today's Deals</a>
 		  <a href="{% url 'genres' %}">Browse By Genre</a>
-		  <a href="#">Browse By Category</a>
+		  <a href="{% url 'categories' %}">Browse By Category</a>
 		</div>
 
 		<div class="smolheading">
-			<h3>ALL CATEGORIES</h3>
-		</div>
-		
-		<!-- row 1 -->
+			<h3>DISCOVER</h3>
+			</div>
 		<div class="row">
-			<div class="column">
-				<img src="{% static 'img/warcross.jpg'%}" class="image" width="200" height="330" align="middle" alt="Warcross"/>
+			
+		  <div class="column">
+				<img src="{% static 'img/crazy rich asians.jpg'%}" class="image" width="200" height="330" align="middle" alt="Crazy Rich Asians"/>
 					<div class="overlay">
-						<div class="text"><a href="#"><strong>Children's (or all ages)</strong></a></div>
+						<div class="text"><a href="#"><strong>Crazy Rich Asians</strong> by Kevin Kwan</a></div>
+					</div>
+		  </div>
+		  <div class="column">
+				<a href="#"><img src="{% static 'img/I was born for this.jpg'%}" class="image" width="200" height="330" align="middle" alt="I Was Born For This"/></a>
+					<div class="overlay">
+						<div class="text"><strong>I Was Born For This</strong> by Alice Osman</div>
+					</div>
+		  </div>
+		  <div class="column">
+				<a href="#"><img src="{% static 'img/warcross.jpg'%}" class="image" width="200" height="330" align="middle" alt="Warcross"/></a>
+					<div class="overlay">
+						<div class="text"><strong>Warcross</strong> by Marie Lu</div>
 					</div>
 			</div>
-			<div class="column">
-				<img src="{% static 'img/I was born for this.jpg'%}" class="image" width="200" height="330" align="middle" alt="I Was Born For This"/></a>
+		  <div class="column">
+				<a href="#"><img src="{% static 'img/koi good news.jpg'%}" class="image" width="200" height="330" align="middle" alt="Koi Good News?"/></a>
 					<div class="overlay">
-						<div class="text"><a href="{% url 'youngadult' %}"><strong>Young Adult (13+)</strong></a></div>
-					</div>
-			</div>
-			<div class="column">
-				<img src="{% static 'img/crazy rich asians.jpg'%}" class="image" width="200" height="330" align="middle" alt="Crazy Rich Asians"/></a>
-					<div class="overlay">
-						<div class="text"><a href="#"><strong>New Adult (17+)</strong></a></div>
-					</div>
-			</div>
-			<div class="column">
-				<img src="{% static 'img/koi good news.jpg'%}" class="image" width="200" height="330" align="middle" alt="Koi Good News?"/></a>
-					<div class="overlay">
-						<div class="text"><a href="#"><strong>Adult(19+)</strong></a></div>
+						<div class="text"><strong>Koi Good News?</strong> by Zarreen Khan</div>
 					</div>
 			</div>
 		</div>

@@ -15,7 +15,7 @@
 	  <a href="{% url 'new_releases' %}">Home</a>
 	  <a href="{% url 'discover' %}">Discover</a>
 	  <a href="{% url 'about' %}">About</a>
-	  <a href="{% url 'contact' %}">Contact</a>
+	  <a href="#">Contact</a>
 	</div>
 
 	<div class="main">
@@ -34,39 +34,18 @@
 		<div class="topnav">
 		  <a href="{% url 'new_releases' %}">New Releases</a>
 		  <a href="{% url 'todays_deals' %}">Today's Deals</a>
-		  <a href="#">Browse By Genre</a>
+		  <a href="{% url 'genres' %}">Browse By Genre</a>
 		  <a href="{% url 'categories' %}">Browse By Category</a>
 		</div>
 
 		<div class="smolheading">
-			<h3>ALL GENRES</h3>
-		</div>
-		
-		<!-- row 1 -->
+			<h3>CONTACT US</h3>
+			</div>
 		<div class="row">
-			<div class="column">
-				<img src="{% static 'img/I was born for this.jpg'%}" class="image" width="200" height="330" align="middle" alt="I Was Born For This"/>
-					<div class="overlay">
-						<div class="text"><a href="{% url 'contemporary' %}"><strong>Contemporary</strong></a></div>
-					</div>
-			</div>
-			<div class="column">
-				<img src="{% static 'img/warcross.jpg'%}" class="image" width="200" height="330" align="middle" alt="Warcross"/>
-					<div class="overlay">
-						<div class="text"><a href="#"><strong>Science Fiction</strong></a></div>
-					</div>
-			</div>
-			<div class="column">
-				<img src="{% static 'img/crazy rich asians.jpg'%}" class="image" width="200" height="330" align="middle" alt="Crazy Rich Asians"/>
-					<div class="overlay">
-						<div class="text"><a href="#"><strong>Fantasy</strong></a></div>
-					</div>
-			</div>
-			<div class="column">
-				<img src="{% static 'img/koi good news.jpg'%}" class="image" width="200" height="330" align="middle" alt="Koi Good News?"/>
-					<div class="overlay">
-						<div class="text"><a href="#"><strong>Humour</strong></a></div>
-					</div>
+			<div class="complete_column">
+				<form action="mailto:email@example.com" enctype="text/plain">
+				<textarea></textarea>
+				</form>
 			</div>
 		</div>
 	</div>

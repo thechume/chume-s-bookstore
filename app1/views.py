@@ -15,3 +15,21 @@ def genres(request):
 
 def categories(request):
     return render(request,'mysite3/categories.html')
+
+def warcross(request):
+    return render(request,'mysite3/books/warcross.html')
+	
+def youngadult(request):
+    return render(request,'mysite3/category_s/youngadult.html')
+	
+def contemporary(request):
+    return render(request,'mysite3/genre_s/contemporary.html')
+	
+def discover(request):
+    return render(request,'mysite3/discover.html')
+	
+def about(request):
+    return render(request,'mysite3/about.html')
+	
+def contact(request):
+    return render(request,'mysite3/contact.html')

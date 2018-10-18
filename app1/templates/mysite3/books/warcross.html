@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css'%}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="{% static 'js/bootstrap.min.js'%}" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<title>Chume's bookstore</title>
+</head>
+
+<body>
+	{% block content %}
+	{% endblock %}
+	<div class="sidenav">
+	  <a href="{% url 'new_releases' %}">Home</a>
+	  <a href="{% url 'discover' %}">Discover</a>
+	  <a href="{% url 'about' %}">About</a>
+	  <a href="{% url 'contact' %}">Contact</a>
+	</div>
+
+	<div class="main">
+
+		<div class="header">
+		  <img src="{% static 'img/logo2.png'%}"/>
+		</div>
+		
+		<div id="tfheader">
+			<form id="tfnewsearch" method="get" action="http://www.google.com">
+					<input type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
+			</form>
+		<div class="tfclear"></div>
+		</div>
+		
+		<div class="topnav">
+		  <a href="{% url 'new_releases' %}">New Releases</a>
+		  <a href="{% url 'todays_deals' %}">Today's Deals</a>
+		  <a href="{% url 'genres' %}">Browse By Genre</a>
+		  <a href="{% url 'categories' %}">Browse By Category</a>
+		</div>
+
+		<div class="row">
+			<div class="complete_column">
+				<center><img src="{% static 'img/warcross.jpg'%}" width="200" height="330" alt="Warcross"/><center>
+			</div>
+			
+			<div class="complete_column">
+				<p>Title: <strong>Warcross</strong><p>
+			
+				<p>Author: <strong>Marie Lu</strong><p>
+
+				<p>Genre: <strong>Science Fiction</strong><p>
+
+				<p>Category: <strong>Young Adult</strong><p>
+
+				<p>Series info: <strong>Books of series "Warcross" in order- Warcross, Wildcard</strong><p>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="complete_column">
+				<h3>Synopsis:</h3>
+				<p>When a game called Warcross takes the world by storm, one girl hacks her way into its dangerous depths. For the millions who log in every day, Warcross isn't just a game—it's a way of life. Struggling to make ends meet, teenage hacker Emika Chen works as a bounty hunter, tracking down players who bet on the game illegally. When Emika hacks into the game illegally, she's convinced she'll be arrested, and is shocked when she gets a call from the game's creator, the elusive young billionaire Hideo Tanaka, with an irresistible offer. He needs a spy on the inside of this year's tournament in order to uncover a security problem ... and he wants Emika for the job. In this sci-fi thriller, #1 New York Times bestselling author Marie Lu conjures an immersive, exhilarating world where choosing who to trust may be the biggest gamble of all.</p>
+				<br />
+				<p><strong>Price:</strong> (15% off!) 312</p>
+			</div>
+		</div>
+		
+		<div class="complete_column">
+			<a href="#"><p><u>Add to cart</u></p></a>
+		</div>
+		
+	</div>
+</body>
+
+</html>
