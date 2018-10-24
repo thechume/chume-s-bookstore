@@ -21,7 +21,7 @@
 	<div class="main">
 
 		<div class="header">
-		  <img src="{% static 'img/logo2.png'%}"/>
+		  <img src="{% static 'img/logo2.png'%}">
 		</div>
 		
 		<div id="tfheader">
@@ -35,41 +35,36 @@
 		  <a href="{% url 'new_releases' %}">New Releases</a>
 		  <a href="{% url 'todays_deals' %}">Today's Deals</a>
 		  <a href="{% url 'genres' %}">Browse By Genre</a>
-		  <a href="#">Browse By Category</a>
+		  <a href="{% url 'categories' %}">Browse By Category</a>
 		</div>
 
 		<div class="smolheading">
-			<h3>ALL CATEGORIES</h3>
+			<h3>Mystery & Crime</h3>
 		</div>
-		
-		<!-- row 1 -->
 		<div class="row">
-			<div class="column">
-				<img src="{% static 'img/furthermore.jpg'%}" class="image" width="200" height="330" align="middle" alt="Warcross"/>
-					<div class="overlay">
-						<div class="text"><a href="{% url 'kids' %}"><strong>Children's (or all ages)</strong></a></div>
-					</div>
+		    {% for i in data %}
+			<div class="column_img1">
+				<img src="{{ i.cover }}" alt="{{ i.title }}" width="200" height="330" align="middle"/>
 			</div>
-			<div class="column">
-				<img src="{% static 'img/I was born for this.jpg'%}" class="image" width="200" height="330" align="middle" alt="I Was Born For This"/></a>
-					<div class="overlay">
-						<div class="text"><a href="{% url 'youngadult' %}"><strong>Young Adult (15+)</strong></a></div>
-					</div>
-			</div>
-			<div class="column">
-				<img src="{% static 'img/ACOMAF.jpg'%}" class="image" width="200" height="330" align="middle" alt="Crazy Rich Asians"/></a>
-					<div class="overlay">
-						<div class="text"><a href="{% url 'newadult' %}"><strong>New Adult (18+)</strong></a></div>
-					</div>
-			</div>
-			<div class="column">
-				<img src="{% static 'img/Ive got your number.jpg'%}" class="image" width="200" height="330" align="middle" alt="Koi Good News?"/></a>
-					<div class="overlay">
-						<div class="text"><a href="{% url 'adult' %}"><strong>Adult(19+)</strong></a></div>
-					</div>
-			</div>
+			<div class="column_text1">
+			    <p>ISBN: <strong>{{ i.isbn }}</strong><p>
+			  
+				<p>Title: <strong>{{ i.title }}</strong><p>
+				
+				<p>Author: <strong>{{ i.a_name }}</strong><p>
+
+				<p>Genre: <strong>{{ i.genre }}</strong><p>
+
+				<p>Category: <strong>{{ i.category }}</strong><p>
+				
+				<p>Format: <strong>{{ i.format }}</strong><p>
+				
+				<p>Price: <strong>INR {{ i.price }}</strong><p>
+
+				<a href="#"><p>Show more</p></a>
+			</div> 
+			{% endfor %}
 		</div>
-		
 	</div>
 </body>
 

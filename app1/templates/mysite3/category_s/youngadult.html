@@ -42,68 +42,28 @@
 			<h3>Young Adult</h3>
 		</div>
 		<div class="row">
-		  <div class="column_img1">
-			<img src="{% static 'img/warcross.jpg'%}" alt="Warcross" width="200" height="330" align="middle"/>
-		  </div>
-		  <div class="column_text1">
-			<p>Title: <strong>Warcross</strong><p>
-			
-			<p>Author: <strong>Marie Lu</strong><p>
-
-			<p>Genre: <strong>Science Fiction</strong><p>
-
-			<p>Category: <strong>Young Adult</strong><p>
-
-			<a href="{% url 'warcross' %}"><p>show more</p></a>
-		  </div>
-		 </div>
-		 <div class="row">
-		  <div class="column_img1">
-			<img src="{% static 'img/I was born for this.jpg'%}" alt="I Was Born For This" width="200" height="330" align="middle"/>
-		  </div>
-		  <div class="column_text1">
-			<p>Title: <strong>I Was Born For This</strong><p>
-			
-			<p>Author: <strong>Alice Osman</strong><p>
-
-			<p>Genre: <strong>Contemporary</strong><p>
-
-			<p>Category: <strong>Young Adult</strong><p>
-
-			<a href="#"><p>show more</p></a>
-		  </div>
-		 </div>
-		 <div class="row">	  
+			{% for i in yadata %}
 			<div class="column_img1">
-				<img src="{% static 'img/warcross.jpg'%}" alt="Warcross" width="200" height="330" align="middle"/>
-			</div>
-			<div class="column_text1">
-				<p>Title: <strong>Warcross</strong><p>
-			
-				<p>Author: <strong><a href="{% url 'warcross' %}"><p>show more</p></a></strong><p>
+				<img src="{{ i.cover }}" alt="{{ i.title }}" width="200" height="330" align="middle"/>
+			  </div>
+			  <div class="column_text1">
+			    <p>ISBN: <strong>{{ i.isbn }}</strong><p>
+			  
+				<p>Title: <strong>{{ i.title }}</strong><p>
+				
+				<p>Author: <strong>{{ i.a_name }}</strong><p>
 
-				<p>Genre: <strong>Contemporary</strong><p>
+				<p>Genre: <strong>{{ i.genre }}</strong><p>
 
-				<p>Category: <strong>Young Adult</strong><p>
+				<p>Category: <strong>{{ i.category }}</strong><p>
+				
+				<p>Format: <strong>{{ i.format }}</strong><p>
+				
+				<p>Price: <strong>INR {{ i.price }}</strong><p>
 
-				<a href="{% url 'warcross' %}"><p>show more</p></a>
-			</div>
-		</div>
-		<div class="row">
-		  <div class="column_img1">
-		    <img src="{% static 'img/warcross.jpg'%}" alt="Warcross" width="200" height="330" align="middle"/>
-		  </div>
-		  <div class="column_text1">
-			<p>Title: <strong>Warcross</strong><p>
-			
-			<p>Author: <strong><a href="{% url 'warcross' %}"><p>show more</p></a></strong><p>
-
-			<p>Genre: <strong>Contemporary</strong><p>
-
-			<p>Category: <strong>Young Adult</strong><p>
-
-			<a href="{% url 'warcross' %}"><p>show more</p></a>
-		  </div>
+				<a href="#"><p>Show more</p></a>
+			</div> 
+			{% endfor %}
 		</div>
 	</div>
 </body>

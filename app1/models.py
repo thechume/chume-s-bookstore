@@ -49,3 +49,11 @@ class Discount(models.Model):
     class Meta:
         managed = False
         db_table = 'discount'
+
+class Users(models.Model):
+    email = models.CharField(primary_key=True, max_length=40)
+    pwd = models.CharField(max_length=40)
+
+    class Meta:
+        managed = False
+        db_table = 'users'

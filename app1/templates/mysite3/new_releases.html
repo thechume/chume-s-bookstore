@@ -25,10 +25,11 @@
 		</div>
 		
 		<div id="tfheader">
-			<form id="tfnewsearch" method="get" action="http://www.google.com">
-					<input type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
+			<form id="tfnewsearch" method="POST" action="{% url 'search'%}">
+				{% csrf_token %}
+				<input type="text" name="search" class="tftextinput" size="21" maxlength="120"><input type="submit" class="tfbutton">
 			</form>
-		<div class="tfclear"></div>
+			<div class="tfclear"></div>
 		</div>
 		
 		<div class="topnav">
@@ -62,11 +63,18 @@
 					</div>
 			</div>
 		  <div class="column">
-				<img src="{% static 'img/koi good news.jpg'%}" class="image" width="200" height="330" align="middle" alt="Koi Good News?"/><
+				<img src="{% static 'img/koi good news.jpg'%}" class="image" width="200" height="330" align="middle" alt="Koi Good News?"/>
 					<div class="overlay">
 						<div class="text"><a href="#"><strong>Koi Good News?</strong> by Zarreen Khan</a></div>
 					</div>
-			</div>
+		  </div>
+		</div>
+		<div class="row">
+			<form class="form" role="form" autocomplete="off" method ="post">			    
+				{% csrf_token %}
+				<input type="text" value="search" name="search" class="tftextinput" size="21" maxlength="120">
+				<a href="{% url 'test' %}">test</a>
+			</form>
 		</div>
 	</div>
 </body>

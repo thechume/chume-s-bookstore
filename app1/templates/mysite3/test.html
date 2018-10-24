@@ -25,45 +25,38 @@
 		</div>
 		
 		<div id="tfheader">
-			<form id="tfnewsearch" method="get" action="http://www.google.com">
-					<input type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
+			<form id="tfnewsearch" method="get" action="{% url 'search' %}">
+				{% csrf_token %}
+				<input type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
 			</form>
 		<div class="tfclear"></div>
 		</div>
 		
 		<div class="topnav">
-		  <a href="{% url 'new_releases' %}">New Releases</a>
+		  <a href="#">New Releases</a>
 		  <a href="{% url 'todays_deals' %}">Today's Deals</a>
 		  <a href="{% url 'genres' %}">Browse By Genre</a>
 		  <a href="{% url 'categories' %}">Browse By Category</a>
 		</div>
 
 		<div class="smolheading">
-			<h3>Contemporary</h3>
-		</div>
-		<div class="row">
-		    {% for i in data %}
-			<div class="column_img1">
-				<img src="{{ i.cover }}" alt="{{ i.title }}" width="200" height="330" align="middle"/>
+			<h3>NEW RELEASES</h3>
 			</div>
-			<div class="column_text1">
-			    <p>ISBN: <strong>{{ i.isbn }}</strong><p>
-			  
-				<p>Title: <strong>{{ i.title }}</strong><p>
-				
-				<p>Author: <strong>{{ i.a_name }}</strong><p>
-
-				<p>Genre: <strong>{{ i.genre }}</strong><p>
-
-				<p>Category: <strong>{{ i.category }}</strong><p>
-				
-				<p>Format: <strong>{{ i.format }}</strong><p>
-				
-				<p>Price: <strong>INR {{ i.price }}</strong><p>
-
-				<a href="#"><p>Show more</p></a>
-			</div> 
-			{% endfor %}
+		<div class="row">
+			<table>
+					<tr>
+					  <th>author    </th>
+					  <th>title     </th>
+					  <th>price     </th>
+					</tr>
+					{% for i in isbn %}
+					<tr>
+					  <td>{{ i.a_id }}     </td>
+					  <td>{{ i.title }}     </td>
+					  <td>{{ i.price }}     </td>
+					</tr>
+					{% endfor %}
+				</table>
 		</div>
 	</div>
 </body>
