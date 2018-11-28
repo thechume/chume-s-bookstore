@@ -8,25 +8,6 @@
 from django.db import models
 
 
-class App1Choice(models.Model):
-    choice_text = models.CharField(max_length=200)
-    votes = models.IntegerField()
-    question = models.ForeignKey('App1Question', models.DO_NOTHING)
-
-    class Meta:
-        managed = False
-        db_table = 'app1_choice'
-
-
-class App1Question(models.Model):
-    question_text = models.CharField(max_length=200)
-    pub_date = models.DateTimeField()
-
-    class Meta:
-        managed = False
-        db_table = 'app1_question'
-
-
 class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=80)
 
@@ -104,7 +85,7 @@ class Authors(models.Model):
 
 class Books(models.Model):
     isbn = models.CharField(primary_key=True, max_length=30)
-    title = models.CharField(max_length=35, blank=True, null=True)
+    title = models.CharField(max_length=55, blank=True, null=True)
     a = models.ForeignKey(Authors, models.DO_NOTHING, blank=True, null=True)
     cover = models.CharField(max_length=20183, blank=True, null=True)
     genre = models.CharField(max_length=20, blank=True, null=True)
@@ -113,6 +94,7 @@ class Books(models.Model):
     format = models.CharField(max_length=20, blank=True, null=True)
     synopsis = models.CharField(max_length=4000, blank=True, null=True)
     price = models.FloatField(blank=True, null=True)
+    pub_date = models.DateField(blank=True, null=True)
 
     class Meta:
         managed = False
@@ -120,17 +102,19 @@ class Books(models.Model):
 
 
 class Cart(models.Model):
-    item_no = models.AutoField(primary_key=True)
-    isbn = models.ForeignKey(Books, models.DO_NOTHING, db_column='isbn', blank=True, null=True)
+    isbn = models.ForeignKey(Books, models.DO_NOTHING, db_column='isbn', primary_key=True)
+    email = models.ForeignKey('Users', models.DO_NOTHING, db_column='email')
 
     class Meta:
         managed = False
         db_table = 'cart'
+        unique_together = (('isbn', 'email'),)
 
 
 class Discount(models.Model):
     isbn = models.ForeignKey(Books, models.DO_NOTHING, db_column='isbn', primary_key=True)
-    price = models.FloatField(blank=True, null=True)
+    dprice = models.FloatField(blank=True, null=True)
+    offer = models.IntegerField(blank=True, null=True)
 
     class Meta:
         managed = False
